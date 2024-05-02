@@ -1,0 +1,66 @@
+basePath: /
+consumes:
+- application/json
+definitions:
+  model.ReqBody:
+    properties:
+      age:
+        description: 年龄
+        example: 20
+        type: integer
+      name:
+        description: 名字
+        example: 张三
+        type: string
+    type: object
+externalDocs: {}
+host: localhost:8000
+info:
+  contact:
+    email: yangxinxin_mail@163.com
+    name: yancey
+  description: swagger demo
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: swagger demo API
+  version: v1.0
+paths:
+  /api/v1/cookieVerify:
+    post:
+      description: |-
+        这是一个测试接口，测试服务是否就绪1
+        这是一个测试接口，测试服务是否就绪2
+      parameters:
+      - description: 人员信息
+        in: body
+        name: requestBody
+        required: true
+        schema:
+          $ref: '#/definitions/model.ReqBody'
+      - description: Project id
+        in: header
+        name: X-Project-Id
+        required: true
+        type: string
+      - description: cookie
+        in: header
+        name: Cookie
+        type: string
+      responses:
+        "200":
+          description: 请求发送成功
+          schema:
+            type: string
+        "500":
+          description: 程序内部错误
+          schema:
+            type: string
+      summary: 访问首页
+      tags:
+      - swagger
+produces:
+- application/json
+schemes:
+- http
+swagger: "2.0"
