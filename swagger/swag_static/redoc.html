@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head />
+<body>
+<H1>Redoc in action</H1>
+<script type="text/javascript" src="./jquery.min.js"></script>
+<script type="text/javascript" src="./jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="./redoc.standalone.min.js"></script>
+<script type="text/javascript" src="./try-it-out.min.js"></script>
+
+<div id="redoc-container"></div>
+<script>
+    RedocTryItOut.init(
+        "/swagger/swagger.yaml",
+        { title: "Pet Store" },
+        document.getElementById("redoc_container")
+    )
+</script>
+
+</body>
+</html>
